@@ -9,14 +9,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.6.2",
-    "@improbable-eng/grpc-web": "^0.14.0",
     "@nuxtjs/axios": "^5.13.6",
-    "@robinrezwan/grpc-college-api": "^1.0.3",
+    "@robinrezwan/grpc-college": "^1.0.7",
     "core-js": "^3.25.3",
-    "google-protobuf": "^3.21.2",
-    "grpc-web": "^1.2.1",
-    "grpc-web-node-http-transport": "0.0.1",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",

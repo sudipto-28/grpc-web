@@ -1,5 +1,5 @@
-// import { LoginServiceClient } from '@robinrezwan/grpc-college-api/ts/login/v1/login_services_grpc_web_pb'
-import  { UserServiceClient } from '@robinrezwan/grpc-college-api/proto/js/user_services_grpc_web_pb'
+import { SessionServiceClient } from '@robinrezwan/grpc-college/js/session_services_pb_service'
+
 
 export default async (ctx, inject) => {
 
@@ -38,6 +38,6 @@ export default async (ctx, inject) => {
 
 
   // const opts = {unaryInterceptors: [new AuthUnaryInterceptor()], streamInterceptors: [new StreamResponseInterceptor()]}
-  inject('userClient', new UserServiceClient('http://18.207.202.41:9001', null, null))
+  inject('sessionClient', new SessionServiceClient('http://18.207.202.41:9002', null, null))
 
 }

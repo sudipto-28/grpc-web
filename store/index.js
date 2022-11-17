@@ -1,26 +1,26 @@
-import { GetUserRequest } from '@robinrezwan/grpc-college-api/proto/js/user_messages_pb';
+import { GetSessionRequest } from "@robinrezwan/grpc-college/js/session_messages_pb";
 
 const actions = {
   async getUser({ commit, dispatch }, payload) {
     try {
-      let req = new GetUserRequest()
-      console.log('Working', req)
-      req.setUsername('dip')
-      console.log('this.$userClient', this.$userClient)
-      console.log('req', req)
-      let d = await this.$userClient.getUser(req, {})
-      console.log('d', d)
-      let res = d.toString()
-      console.log('res', res)
-
+      let req = new GetSessionRequest();
+      console.log("Working", req);
+      req.setSessionId(10);
+      this.$sessionClient.getSession(req, (err, response) => {
+        if (err) {
+          console.log("err", err);
+        } else {
+          console.log(response.toObject());
+        }
+      });
     } catch (err) {
-      console.log('err', err)
+      console.log("err", err);
     }
-  }
-}
+  },
+};
 
 export default {
   strict: false,
   namespaced: true,
-  actions
-}
+  actions,
+};
